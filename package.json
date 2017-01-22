@@ -89,10 +89,11 @@
     "yargs": "^6.5.0"
   },
   "scripts": {
-    "start": "pm2 start process_prod.json",
+    "start": "sails lift",
     "debug": "node debug app.js",
     "test": "NODE_ENV=testing node ./node_modules/mocha/bin/mocha test/bootstrap.test.js test/integration/**/*.test.js",
-    "preinstall": "npm i -g pm2 && pm2 install pm2-logrotate"
+    "preinstall": "npm i -g pm2 && pm2 install pm2-logrotate",
+    "postinstall": "node load_initial_data.js"
   },
   "main": "app.js",
   "author": "getstream.io <support@getstream.io>",

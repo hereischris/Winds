@@ -12,7 +12,7 @@
 if (process.env.NODE_ENV == 'testing') {
     console.log('using test credentials')
     require('dotenv').config({path: './test/.env'})
-} else {
+} else if(process.env.NODE_ENV != 'production') {
     require('dotenv').config()
 }
 
