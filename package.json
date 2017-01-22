@@ -89,9 +89,10 @@
     "yargs": "^6.5.0"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "pm2 start process_prod.json",
     "debug": "node debug app.js",
-    "test": "NODE_ENV=testing node ./node_modules/mocha/bin/mocha test/bootstrap.test.js test/integration/**/*.test.js"
+    "test": "NODE_ENV=testing node ./node_modules/mocha/bin/mocha test/bootstrap.test.js test/integration/**/*.test.js",
+    "preinstall": "npm i -g pm2 && pm2 install pm2-logrotate"
   },
   "main": "app.js",
   "author": "getstream.io <support@getstream.io>",
